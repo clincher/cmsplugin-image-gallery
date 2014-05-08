@@ -11,6 +11,7 @@ class CMSGalleryPlugin(CMSPluginBase):
     model = GalleryPlugin
     name = _('Filer Gallery')
     render_template = 'image_gallery/partials/gallery.html'
+    text_enabled = True
 
     def render(self, context, instance, placeholder):
         context.update({
