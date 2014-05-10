@@ -62,7 +62,7 @@ class Gallery(models.Model):
     )
 
     def __unicode__(self):
-        return '{0}'.format(self.title)
+        return u'{0}'.format(self.title)
 
     def get_absolute_url(self):
         return reverse('image_gallery_detail', kwargs={'pk': self.pk, })
