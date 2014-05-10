@@ -14,10 +14,11 @@ class CMSGalleryPlugin(CMSPluginBase):
     text_enabled = True
 
     def render(self, context, instance, placeholder):
+        context = super(CMSGalleryPlugin, self).render(
+            context, instance, placeholder)
         context.update({
             'gallery': instance.gallery,
             'images': instance.gallery.get_folder_images(),
-            'placeholder': placeholder,
             'display_type': instance.display_type,
         })
         return context
